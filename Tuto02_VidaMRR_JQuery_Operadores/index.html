@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Seguimos aprendiendo Javascript pues es necesario para JQuery -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tuto03 Funciones</title>
+  <script>
+
+    /*Creo la Funcion que va a comprobar el password introducido por el usuario */
+    function miMensaje(){
+        /*hacemos una llamada al documento, con getElementById Propiedades de Javascript que se sustituirán por jQuery*/
+        var campo = document.getElementById("password");//nuestra var campo tiene asignado el objeto de texto
+        /*Creamos el condicional que va a evaluar si el texto introducido en el  campo de texto es = a "Vida MRR"*/
+        if (campo.value == "Vida MRR") {
+            alert("Correcto");
+        }else{
+            alert("Incorrecto");
+    }
+}        
+
+
+
+</script>
+
+</head>
+<body>
+  <h1>Tuto03 Funciones y condicionales</h1>
+<!-- Creo un campo de texto que recogera lo introducido por el user  -->
+<input type="text" id="password" />
+<!-- un boton con un evento, que llamará a la funcion comprobar password, esto es de HTML no de Javascript -->
+ <input button type="button" value="Verificar password" onclick="miMensaje();"/> 
+
+</body>
+</html>  

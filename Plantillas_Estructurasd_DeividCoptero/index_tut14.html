@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!-- Cambio lenguaje a español -->
+<html lang="es">
+
+<!-- Dentro de HEAD tenedremos las características de la página -->
+<head>
+    <!-- Codificación importante para caracteres especiales, como ñ, acentos... -->
+    <meta charset="UTF-8">
+
+    <!-- Como esta pagina va a ir programada orientada a verse en dispositivos mv sobre todos(auqneu se adapta a todos), con esta etiqueta, establece como se va avisualiza rel tipo de vista que va a tener, el ancho que presente sea igual al alancho del dispositvo, que la escala inicial sea de uno y la maxima escla sea de uno, que no se puede hacer zoom, ya se va a ver grande.-->
+    <meta name="viewport" content="width=device-width , initial-scale=1, maximun-scale=1">
+    <title>Tuto HTML5 - Css3</title>
+    
+    <!-- Incluyo la referencia al css normalize para que sea
+    compatible, indico q es stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- Referencio el css de estilos de la página para enlazarlo con el HTML-->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <!-- Incluyo la fuente de google fonts que quiero utilizar y la uso en el css -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+    <!-- Referenciamos el javascript para normalized nos dará compatibilidad de HTML5 con los componentes modernos en distintos dispositivos-->
+    <script type="js/modernizr.custom.88381.js"></script>
+
+    <!-- Referencia para el icono de la página -->
+    <link rel="shortcut icon"  href="imagenes/android_settings.png" type="image/x-icon">
+
+
+</head>
+
+<!-- Contenido de la página -->
+
+<body>
+    <!--  Etiquetas que se pueden utilizar -->
+    <!--  Etiquetas semanticas, son aquella que identifican partes de nuestra pagiona e indican el peso semantico, (lo que una pagina tiene o no tien de cara a los buscadores, etiqueta de menu, etiqueta de header)-->
+    
+
+    <!-- cabecera del cuerpo -->
+    <header>
+    <!-- ETIQUETAS MULTIMEDIA  - VIDEO Y AUDIO
+    Para poenr una imagen colocamoetiqeuta figure seguida de etiqueta img,figcaption sirve para poner una desripción a la imagen <figcaption>Descripción imagen</figcaption>-->
+    <figure>
+        <img src="imagenes/android_settings.png" alt="">
+    </figure>
+
+
+    <!-- titulo -->
+    <h1>Cursos y tutoriales</h1>
+    <!--Etiqueta semantica para crear el menú  -->
+    <nav>
+        <!-- Lista desordenada, ordena sin números, en el menú de opciones -->
+        <ul>
+            <!-- la primera a href tendrá condición de enlace sin ref las otras ya enlazan a páginas, para css creare una clase, y este atributo class se lo aplica a la etiqueta a-->
+            <li><a href="#" class="amarillo" >Inicio</a></li>
+            <!-- Cuando qeuremos hacer referencia a 1 en concreto le damos un id -->
+            <li><a href="http://ecabdam.blogspot.com.es/" id="verde">Blog</a></li>
+            <li><a href="https://github.com/eriDam">Git</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- Indica una seccion-zona de la página que va atener un fin concreto que se diferencia del resto de zonas de la página-->
+<section>
+    <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"   alt=""></figure>
+        <span class="tipo">ANDROID</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Android, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article>
+        
+        <!-- Coloco otro article -->
+         <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"  alt=""></figure>
+        <span class="tipo">HTML5</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Android, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article> <!-- Coloco otro article -->
+         <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"   alt=""></figure>
+        <span class="tipo">C++</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Android, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article>
+
+
+
+         <!-- Coloco otro article -->
+         <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"  alt=""></figure>
+        <span class="tipo">QT y C++</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Android, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article>
+
+         <!-- Coloco otro article -->
+         <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"  alt=""></figure>
+        <span class="tipo">Javascript</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Android, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article>
+         <!-- Coloco otro article -->
+         <article class="curso">
+        <figure><img src="imagenes/android_cuore.jpg"  alt=""></figure>
+        <span class="tipo">Git</span>
+        <h2>Cursos</h2>
+        <p>Relación de cursos y video tutoriales sobre Git, desde los conceptos mas básicos hasta alcanzar niveles mas avanzados </p>
+
+        <!-- Caja diferente -->
+        <div>
+            <span><strong>Listado de cursos</strong></span>
+            <ul>
+                <li><a href="http://www.elrincondelandroid.com/content/"></a>El rincón de Android</li>
+                <li><a href="http://desarrollador-android.com/"></a>Desarrollador-Android</li>
+                <li><a href="http://www.androidcurso.com/index.php/21"></a>Android UPV</li>
+                <li><a href="http://www.aulaclic.net/cursos/mostrar.php?id=77&texto=Android&clase=c"></a>Android Aulaclick</li>
+
+            </ul>
+        </div></article>
+    </section>
+
+    <!-- footer pie de página -->
+    <footer><span>Creado por eriDev - march 2015</span></footer>
+
+</body>
+
+
+
+</html>

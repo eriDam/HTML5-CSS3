@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[% title %]</title> 
+        <meta charset='utf-8' />
+        <script type='text/javascript' src='//ajax.googleapis.com/ajax
++/libs/jquery/1.10.2/jquery.min.js'></script>
+    </head>
+    <body>
+        <div id='result'></div>
+        Enter number: <input type='text' id='number' />
+        <button onclick='test_number();'>Test</button>
+
+        <script>
+            function test_number()
+            {
+                $.ajax({
+                        type: 'POST',
+                        url: 'simple.cgi',
+                        data: { 'number': $('#number').val() },
+                        }).done(function( msg ) {
+                                                    $('#result').html(
++ msg.result );
+                                                });
+            }
+        </script>
+    </body>
+</html>

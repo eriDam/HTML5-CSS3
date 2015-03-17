@@ -1,0 +1,144 @@
+/*
+Estructura del css:
+
+etiqueta{
+    propiedad: valor;
+}
+*/
+
+/*Fuentes y propiedades de texto y la aplico a todo el documento*/
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}
+
+/*Propiedades del header para hacer responsive header y el menú*/
+header{
+    background-color: #D8D8D8;
+    text-align: right;/*alineo texto a la dcha*/
+
+}
+
+header figure{
+    float: left;/*Hacemos flotar la imagen a la izq*/
+    margin-left: 100px;/*margen del figure*/
+}
+
+header figure img{
+    /*Tamaño de la imagen*/
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+header h1{
+    color: #f7f7f7;/*Color mas claro*/
+    float: left;/*Decimos q flote a dcha*/
+    font-size: 1.6em;/*Para que el tamaño sea + grande*/
+    display: block;/*Para q no se venga encima del logo*/
+    margin: 7px 80px 0px 50px;
+    padding: 0px;/*Quitamos el padding (es como un margen interno)q tiene por defecto el h1*/
+} 
+
+header nav ul{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;/*q se centren*/
+    list-style: none; /*quito el punto*/
+    
+}   
+
+header nav ul li{
+    height: 35px;
+    margin-top: 10px;
+    /*como estamos en mobile first ponermos anchura del 100% 
+    y se muetsr en en linea block, uno de tras de otro*/
+    width: 100%;
+    display: inline-block;
+
+
+} 
+header nav ul li a{
+    text-decoration: none;/*no subrayar*/
+    font-weight: bold;
+    color:#f7f7f7;
+    padding: 15px 25px;
+
+}
+
+/*Propiedades que podemos dar a nuestros textos*/
+section article {
+ color: red;
+ font-weight: bolder;/*anchura grosor, bold o bolder lo max*/
+ text-align: center;/*alineacion al texto*/
+ font-style: italic;/*modo cursiva*/
+ text-decoration: underline;/*subrayar*/
+ background-color: black;
+ line-height: 20px;/*altura de linea, espacio entre una linea y la sig*/
+ border-radius:20px;/*marcamos el radio que va a tener nuestra caja*/
+
+    /*Tamaño relativo de letra con respecto 
+     al tam principal del padre article, 
+     ponemos un 80% de 16, 
+     1.8 sería un 80% mas grande
+     Con font-size: 0.8rem apuntamos al body;*/
+     font-size: 0.8rem;
+     width: 200px;
+ }
+
+/*Dar atributos a una  seccion en concreto,
+ tenemos que poner todos los padres del 
+ li que afectara, por si hubieran mas
+ header nav ul li a{
+    color: red;
+    }*/
+
+    /*Para características que se aplican en conjunto utilizamos clases*/
+/*Selectores: Como especificar y dar caracteristicas diferenciado 
+clases de identificadores, ids
+*/
+
+/*Este tipo de clase lo utilizamos para cuando queremos dar a distintos elementos
+las mismas características
+header nav ul li a.amarillo{
+    color: yellow;
+    background: black;
+    }*/
+/*Para caracterçisticas que se aplican a un elemento en concreto no mas
+ utilizamos el id 
+ Creo la estructura para aplicar características
+ al elemento que tiene el id verde
+ header nav ul li a#verde{
+    color: green;
+    background: orange;
+}
+*/
+
+/*ESQUELETO RESPONIVE DESIGN
+Para que nuestra página sea responsive, adaptable
+establecemos diferentes anchuras de dispositivo. 
+Esta tecnología va a ser mobileFirst q va a ser 
+para dispoitivos móviles y pantallas pequeñas
+primero*/
+
+/*Establezco dimensiones,PANTALLAS MÓVILES cuando la anchura minima sea de 480px
+cuando haya pasado ese tamaño, indico el elemento y el efecto va a cambiar*/
+@media screen and (min-width: 480px){
+     header nav ul li{
+       width: 22%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
+     }
+}
+/*dimensiones  TABLETAS tenerlas bien controladas*/
+@media screen and (min-width: 767px){
+header nav ul li{
+       width: 8%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
+     }
+}
+}
+/*dimensiones PANTALLAS ESCRITORIO tenerlas bien controladas*/
+@media screen and (min-width: 950px){
+    header nav ul li{
+       width: 4%;/*cuando sea la pnatalla mas grande, los elementos de la lista se van a hacer al 22%*/
+     }
+}
+
