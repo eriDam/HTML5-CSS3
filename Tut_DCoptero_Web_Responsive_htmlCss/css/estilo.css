@@ -8,17 +8,72 @@ etiqueta{
 
 /*Fuentes y propiedades de texto y la aplico a todo el documento*/
 body {
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-   
+    font-family: 'Raleway', sans-serif;  
+    margin:0;
+    padding:0;
+    font-size:14px;
+    color:#333;
+    min-width:700px;
+
 }
+
+/*Llamamos al id ocntendor para hace rel cambio sobre uno solo*/
+div#contenedor{
+    width: 100%;
+    border: 1px solid transparent;
+    position: relative;     
+    display: none;
+}
+
+/*Div del slider*/
+div#contenedor #slider{
+    border-radius: 10px;/*esquinas redondeadas*/
+    border: 2px solid #8A0868;
+    width: 95%;
+    margin: 0 auto;
+    min-height: 350px;/*si la imagen es muy pequeña se quedara un espacio en blanco, forzamos el min de altura*/
+    margin-top: 25px;/*Para que no se mezcle con el logo*/
+    margin-bottom: 40px;/*Para que no se mezcle con la seccion de abajo*/
+    position: relative;
+    overflow: hidden;/* todo lo que sobresalga lo oculto*/
+    padding: 0px;
+}
+
+/*Clave del slider, características que le vamos a dar a cada elemento en conjunto*/
+div#contenedor #slider div.elemento{
+    position: absolute;
+    left: 0px;
+    top: 0px;/*para que se ponga en la esquina superior izq*/
+    width: 100%;/*anchura 100% del padre que tiene 95%*/
+}
+
+/*Cambiar la imagen*/
+div#contenedor #slider div.elemento img{
+    width: 100%;/*para que no se me vaya*/
+    margin: 0px;/**/
+    padding: 0px;/**/
+    border: 0px; 
+}
+
+div#contenedor #slider div.elemento p.gancho{
+    display: block;
+    font-size: 1.4em;
+    font-weight: bolder;
+    line-height: 25px;
+    color: #5F4B70;
+    width: 29%;
+    right: 1%;
+    top: 5%;
+
+}
+
 
 /*características pie de página*/
 footer{
     height: 75px;/*altura*/
     line-height: 50px;/*centrado*/
     text-align: center;
-    margin-top: 2px;/*margen pàra que no este pegando a la pagina*/
+    margin-top: 2px;/*margen para que no este pegando a la pagina*/
     background: #f5f6f6; /* Old browsers */
     background: -moz-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #a5a5a5 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f6f6), color-stop(21%,#dbdce2), color-stop(49%,#b8bac6), color-stop(80%,#dddfe3), color-stop(100%,#a5a5a5)); /* Chrome,Safari4+ */
@@ -28,12 +83,25 @@ footer{
     background: linear-gradient(to bottom, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#a5a5a5 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#a5a5a5',GradientType=0 ); /* IE6-9 */
     copy
-}
+    }
+
+    /*Pseudo clases AFTER BEFORE, colocamos un guión después del span del 
+    texto del footer, se pueden dar estilos con after y before*/
+    /*guión después*/
+    footer span:after{
+    content: " -";
+
+    }
+    /*Guión antes*/
+     footer span:before{
+    content: "- ";
+
+    }
 /*Propiedades del header para hacer responsive header y el menú*/
 header{
     background-color: #D8D8D8;
     text-align: right;/*alineo texto a la dcha*/
-
+    font-size: 1.3em;
 }
 
 header figure{
@@ -69,7 +137,7 @@ header nav ul li{
     height: 35px;
     margin-top: 10px;
     /*como estamos en mobile first ponermos anchura del 100% 
-    y se muetsr en en linea block, uno de tras de otro*/
+    y se muetsr en inline-block, uno de tras de otro*/
     width: 100%;
     display: inline-block;
 
@@ -80,30 +148,37 @@ header nav ul li a{
     font-weight: bold;
     color:#f7f7f7;
     padding: 15px 25px;
+    text-shadow:1px 1px 1px #BBB;
+}
 
+header nav ul li a:hover{
+    text-shadow:-1px 2px 1px #FFF,1px -2px 1px #FFF,0 0 5px ;
+    color:#5F4B70;
 }
 
 /*Colocar imagen de fondo, hay que colocar section aquí arriba
-para que esté por orden alfabético, hay que retroceder un directorio
+para que esté por orden alfabético,
+
+ Hay que retroceder un directorio
  y luego entrar en imagenes ya que estamos en el dir css. 
  Para que no se repita la imagen ni en el eje x ni en y
  background-repeat: no-repeat; se repite en y background-repeat: repeat-y;*/
  section{
-     margin-top: 10px;
-      background: url(../imagenes/pixfondo.jpg);  
- }  
+   margin-top: 10px;
+   background: url(../imagenes/pixfondo.jpg);  
+}  
 
 
 
- /*Propiedades del article clase recets, lo llamamos con el .*/
- section article.curso{
+/*Propiedades del article clase curso, lo llamamos con el .*/
+section article.curso{
     border-width: 2px;/*anchura del brode*/
     border-style: solid; /*estilo dle borde*/
-    display: inline-block;/*para qu se ponga uno en linea con el otro*/
+    display: inline-block;/*para que se ponga uno en linea con el otro*/
     vertical-align: top;/**/
     position: relative;/*tenemos que ubicar elementos de manera concreta*/
     border-radius: 0px 0px 15px 15px;/*borde redondeadp esquinas inferiores*/
-    margin: 50px 0px 20px 10%;/*el 10% indica que el marg izq , se adapta al 10% del tam de ventana, será variable*/
+    margin: 40px 0px 20px 10%;/*el 10% indica que el marg izq , se adapta al 10% del tam de ventana, será variable*/
     width: 85%;/*Anchura del 85% quedará un 5% de margen q es lo que sobra*/
     font-size: 1.2em;
     /*como se desplaza en eje horizontal, cantidad de desplazamiento
@@ -127,28 +202,73 @@ section article.curso figure img{
     border-style: solid;
     width: 180px;/*anchura*/
     height: 140px;
+    transition-duration: 0.5s;/*Para suavizar las transiciones, tarda 1s en hacer el cambio*/
 }
+
+/*Cuando el ratón esté encima de la imagen*/ 
+section article.curso figure img:hover{
+    /*margin-left: 100px;para q la imagen se vaya + derecha*/
+    /*cursor: pointer;Cambia la flecha del ratón*/
+    opacity: 0.8;/*Va de 0(transp) a 1(total) ejemplo para entender hover */
+    /*transform: scale(1.2);*//*1 es como se muestra siempre*/
+    transform: rotate(-15deg);/*Girar la imagen si ponemos 360 vuelta completa*/
+    /*transform: skew(30deg);Como sesgar al lado conraio -30deg*/
+    /*Este codigo transform scale no se ve igual en todos los navegadores, hay que colocar los prefijos 
+     para que todos los navegadores sean muestren la animación*/
+     -webKit-transform: scale(1.2);/**/
+    
+    /*ejemplo de animación, como no estan implementadas para firefox pongo prefijo
+    */
+   -moz-animation:2s balanceo 1;
+}
+/*Creo la animacion, coloco @ el prefijo keyframes q es la palabra reservada cuando se 
+quiere crear una animación y después el nombre*/
+@-moz-keyframes balanceo{
+    /*tnemos que decir que cosas van a ir psando a lo largo del tiempo, este tiempo se establece con%
+    el 50 sería la mitad del tiempo que le hemos marcado, el 0% empieza y el 100% acaba*/
+   20%{
+    /*efecto de ir atras y girar varizs transformaciones*/
+    -moz-transform: scale(0.8) rotate(-6deg);
+    
+   }
+      30%, 70%{
+    /*efecto de ir atras y girar varizs transformaciones*/
+    -moz-transform: scale(1.2) rotate(15deg);
+    
+   }
+      50%, 90%{
+    /*efecto de ir atras y girar varizs transformaciones*/
+    -moz-transform: scale(1.2) rotate(-15deg);
+   }
+}
+
 
 /*Control de h2*/
 section article.curso h2{
     /*Quitamos el padding q tiene x defecto*/
     padding: 0px;
     text-align: right;
-    margin: 15px 20px 0px 130px;
-    font-size: 1.6em;/*el article de por si tiene el 20% mas(1.2em) de tamaño, le incrementamos*/
+    margin: 15px 20px 0px 165px;
+    font-size: 1.2em;/*el article de por si tiene el 20% mas(1.2em) de tamaño, le incrementamos*/
+}
+/*Control de h2 con ratón encima*/
+section article.curso h2:hover{
+    font-size: 1.6em;
+   /* color: white;*/
+    text-shadow:-1px 2px 1px #FFF,1px -2px 1px #FFF,0 0 5px #FFF;
 }
 
 /*Control de div de la lista ordenada*/
 section article.curso div{
- width: 90%;
- text-align: justify;
- margin: 30px 5% 10px 5%;
- border-style: solid;
- border-width: 2px;
- position: relative;
- padding-top: 20px;
- font-size: 0.9em;
- border-radius: 15px;/*todas las esquinas*/
+   width: 90%;
+   text-align: justify;
+   margin: 30px 4% 10px 5%;
+   border-style: solid;
+   border-width: 2px;
+   position: relative;
+   padding-top: 20px;
+   font-size: 0.9em;
+   border-radius: 15px;/*todas las esquinas*/
 
 }
 
@@ -176,7 +296,7 @@ section article.curso div ul li{
     font-weight: bolder;/*Lo mas negrita posible*/
     vertical-align: middle;/*Se alinean en medio*/
     display: inline-block;/*Uno al lado de otro*/ 
-    margin: 3px 1%;/*para que no salgan pegados*/
+    margin: 5px 3%;/*para que no salgan pegados*/
     width: 26%;/*la anchura de cada elemento*/
 }
 
@@ -377,21 +497,34 @@ section div.news{
     float: right;
     padding-bottom: 20px;
     display: none;/*Para q no se vea*/
+    position: relative;
 }
+/*section div.news:before{
+    content: "";
+    position: absolute;
+    bottom: -95px;
+    width: 205px;
+    right: 0px;
+    border-color: white transparent 
+                transparent transparent;
+    border-style: solid;
+    border-width: 100px 100px 0px 100px;
 
+}
+*/
 /*El titulo*/
 section div.news h2{
     text-align: center; /*alineo al centro*/
 
 }
 section div.news h3{
-   margin-left: 85px;
+ margin-left: 85px;
 
 }
 
 /*El article*/
 section div.news article.post{
-    
+
     width= 95%;
     margin-left: 2%;
     margin-top: 25px;
@@ -432,19 +565,23 @@ primero*/
 /*Establezco dimensiones,PANTALLAS MÓVILES cuando la anchura minima sea de 480px
 cuando haya pasado ese tamaño, indico el elemento y el efecto va a cambiar*/
 @media screen and (min-width: 480px){
- header nav ul li{
-   width: 22%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
-}
-
+   header nav ul li{
+     width: 22%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
+ }
+ 
 
 }
 /*dimensiones  TABLETAS tenerlas bien controladas*/
 @media screen and (min-width: 767px){
     header nav ul li{
-       width: 8%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
-   } 
-   /*Como cambiará article, se verá a dos columnas */
-   section article.curso{
+     width: 8%;/*cuando sea la pantalla mas grande, los elementos de la lista se van a hacer al 22%*/
+ } 
+
+ div#contenedor{
+    display: inline;
+ }
+ /*Como cambiará article, se verá a dos columnas */
+ section article.curso{
     width: 40%;/*Anchura del 40% con el ancho sumamos un 49% en total de margen, es bueno que no lleguen a 50 x que falta sumar los bordes*/
     margin: 50px 3% 20px 6%;/*el 6% indica que el marg izq , se adapta al 6% del tam de ventana, será variable*/
 }
@@ -453,8 +590,8 @@ cuando haya pasado ese tamaño, indico el elemento y el efecto va a cambiar*/
 /*dimensiones PANTALLAS ESCRITORIO tenerlas bien controladas*/
 @media screen and (min-width: 950px){
 
- /*Como cambiará article, se verá a 3 columnas */
- section article.curso{
+   /*Como cambiará article, se verá a 3 columnas */
+   section article.curso{
         /*Anchura del 26% con el ancho sumamos un 49% en total de margen, es bueno que no lleguen
         a 50 x que falta sumar los bordes*/
         width: 24%;
@@ -462,9 +599,13 @@ cuando haya pasado ese tamaño, indico el elemento y el efecto va a cambiar*/
          IZQUIERDA 5%, en total sumamos un 32, si queremos que sean 3 columnas deberian medir 33 */
          margin: 50px 1% 20px 4%; 
      }
+     div#contenedor{
+        display: inline;
+     }
+
      /*Hacemos que el contenidod el lateral noticias se muestre solo en pantallas grandes*/
      section div.news{
         display: inline-block;
-     }
- }
+    }
+}
 
